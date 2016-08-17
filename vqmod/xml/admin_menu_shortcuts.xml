@@ -1,0 +1,79 @@
+<modification>
+  <id>Admin Shortcuts Menu</id>
+  <version>1.1.1</version>
+  <vqmver>2.1.0</vqmver>
+  <author>Harshad and Ravi</author>
+  <file name="admin/controller/common/home.php">
+    <operation>
+      <search position="after">
+        <![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]>
+      </search>
+      <add>
+        <![CDATA[/* Admin Shortcuts Menu Begin */
+		if (VERSION >= '1.5.5') {
+			$this->language->load('common/admin_menu_shortcuts');
+		} else {
+		$this->load->language('common/admin_menu_shortcuts');
+		}
+		$url = '';
+		$this->data['text_amenu_add_product'] = $this->language->get('text_amenu_add_product');
+		$this->data['amenu_add_product'] = $this->url->link('catalog/product/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['text_amenu_products'] = $this->language->get('text_amenu_products');
+		$this->data['amenu_products'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_add_category'] = $this->language->get('text_amenu_add_category');
+		$this->data['amenu_add_category'] = $this->url->link('catalog/category/insert', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_categories'] = $this->language->get('text_amenu_categories');
+		$this->data['amenu_categories'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_options'] = $this->language->get('text_amenu_options');
+		$this->data['amenu_options'] = $this->url->link('catalog/option', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_manufacturer'] = $this->language->get('text_amenu_manufacturer');
+		$this->data['amenu_manufacturer'] = $this->url->link('catalog/manufacturer', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_information'] = $this->language->get('text_amenu_information');
+		$this->data['amenu_information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_reviews'] = $this->language->get('text_amenu_reviews');
+		$this->data['amenu_reviews'] = $this->url->link('catalog/review', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_orders'] = $this->language->get('text_amenu_orders');
+		$this->data['amenu_orders'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_returns'] = $this->language->get('text_amenu_returns');
+		$this->data['amenu_returns'] = $this->url->link('sale/return', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_customers'] = $this->language->get('text_amenu_customers');
+		$this->data['amenu_customers'] = $this->url->link('sale/customer', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_coupons'] = $this->language->get('text_amenu_coupons');
+		$this->data['amenu_coupons'] = $this->url->link('sale/coupon', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_mail'] = $this->language->get('text_amenu_mail');
+		$this->data['amenu_mail'] = $this->url->link('sale/contact', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_settings'] = $this->language->get('text_amenu_settings');
+		$this->data['amenu_settings'] = $this->url->link('setting/store', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_purchased'] = $this->language->get('text_amenu_purchased');
+		$this->data['amenu_purchased'] = $this->url->link('report/product_purchased', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['text_amenu_backup_restore'] = $this->language->get('text_amenu_backup_restore');
+		$this->data['amenu_backup_restore'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');
+		/* Admin Shortcuts Menu End */]]>
+      </add>
+    </operation>
+  </file>
+  <file name="admin/view/template/common/home.tpl">
+    <operation>
+      <search position="after">
+        <![CDATA[<div class="content">]]>
+      </search>
+      <add>
+        <![CDATA[<!-- Shortcuts Free Begin -->
+          <?php include '../admin_menu/admin_menu_shortcuts/data_file/admin_menu_shortcuts.php'; ?>
+          <!-- Shortcuts Free End -->]]>
+      </add>
+    </operation>
+  </file>
+  <file name="admin/view/template/common/header.tpl">
+    <operation>
+      <search position="before">
+        <![CDATA[</head>]]>
+      </search>
+      <add>
+        <![CDATA[<!-- Shortcuts Free Begin -->
+		<link rel="stylesheet" type="text/css" href="../admin_menu/admin_menu_shortcuts/css/admin_menu_shortcuts.css" />
+          <!-- Shortcuts Free End -->]]>
+      </add>
+    </operation>
+  </file>
+</modification>

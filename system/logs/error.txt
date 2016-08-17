@@ -1,0 +1,5 @@
+2013-03-13 14:40:55 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp\www\osms\system\library\mail.php on line 150
+2013-03-13 14:42:30 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp\www\osms\system\library\mail.php on line 150
+2013-03-13 14:42:32 - PHP Notice:  Undefined index: order_id in C:\wamp\www\osms\catalog\controller\payment\cod.php on line 20
+2013-03-13 14:47:34 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp\www\osms\system\library\mail.php on line 150
+2013-03-13 15:03:32 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp\www\osms\system\library\mail.php on line 150
